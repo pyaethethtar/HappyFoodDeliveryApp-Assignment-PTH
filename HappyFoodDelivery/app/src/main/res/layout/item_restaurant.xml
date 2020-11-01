@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/margin_medium_3"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvRestaurant"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_cardview_big"
+        app:cardCornerRadius="@dimen/margin_medium_2">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivRestaurant"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/restaurant"
+            android:scaleType="centerCrop"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRestaurantName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hollywood Starz Cafe"
+        android:textAlignment="textStart"
+        android:textColor="@color/textcolorPrimary"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_regular_3x"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_below="@id/cvRestaurant"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4.9"
+        android:textSize="@dimen/text_regular"
+        android:textColor="@color/colorPrimaryDark1"
+        android:paddingTop="@dimen/margin_small"
+        android:layout_below="@id/tvRestaurantName"
+        android:drawableLeft="@drawable/ic_star_pink_24"
+        android:drawablePadding="@dimen/margin_small"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(124 Ratings)  Cafe * Western Food * $$"
+        android:textSize="@dimen/text_regular"
+        android:textColor="@color/textcolorTertary"
+        android:layout_toEndOf="@id/tvRating"
+        android:layout_alignTop="@id/tvRating"
+        android:layout_marginStart="@dimen/margin_small"
+        android:paddingTop="@dimen/margin_small"/>
+
+</RelativeLayout>

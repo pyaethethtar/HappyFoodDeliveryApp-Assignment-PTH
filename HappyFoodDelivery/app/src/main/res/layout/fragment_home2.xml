@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <AutoCompleteTextView
+            android:id="@+id/actSearchFoods"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search Foods"
+            android:textColor="@color/textcolorPrimary"
+            android:textColorHint="@color/textcolorSecondary"
+            android:background="@drawable/rounded_corner_gray"
+            android:drawableLeft="@drawable/ic_search_black_24"
+            android:drawablePadding="@dimen/margin_small"
+            android:padding="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium_3"
+            android:layout_toStartOf="@id/ivSearch"
+            android:layout_marginTop="@dimen/margin_medium_3"
+            android:layout_marginStart="@dimen/margin_medium_3"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="@dimen/margin_xxlarge"
+            android:layout_height="@dimen/margin_xxlarge"
+            android:src="@drawable/ic_baseline_short_text_24"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/margin_medium_3"
+            android:layout_alignTop="@id/actSearchFoods"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblPopularChoices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_popular_choices"
+            android:textSize="@dimen/text_heading_1x"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark1"
+            android:layout_below="@id/actSearchFoods"
+            android:layout_alignStart="@id/actSearchFoods"
+            android:layout_marginTop="@dimen/margin_medium_3"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnShowAllPopularChoices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_show_all"
+            android:textColor="@color/textcolorTertary"
+            android:textSize="@dimen/text_regular"
+            android:textStyle="bold"
+            android:layout_alignEnd="@id/ivSearch"
+            android:layout_alignBaseline="@id/lblPopularChoices"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPopularChoices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_alignStart="@id/actSearchFoods"
+            android:layout_below="@id/lblPopularChoices"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblNewRestaurants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Restaurants"
+            android:textSize="@dimen/text_heading_1x"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark1"
+            android:layout_below="@id/rvPopularChoices"
+            android:layout_alignStart="@id/actSearchFoods"
+            android:layout_marginTop="@dimen/margin_medium_3"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnShowAllNewRestaurants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_show_all"
+            android:textColor="@color/textcolorTertary"
+            android:textSize="@dimen/text_regular"
+            android:textStyle="bold"
+            android:layout_alignEnd="@id/ivSearch"
+            android:layout_alignBaseline="@id/lblNewRestaurants"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRestaurants"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_alignStart="@id/actSearchFoods"
+            android:layout_below="@id/lblNewRestaurants"/>
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

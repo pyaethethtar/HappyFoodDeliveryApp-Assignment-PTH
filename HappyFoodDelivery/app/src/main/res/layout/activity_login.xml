@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/margin_large"
+        android:background="@color/colorBackground"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back_black_24"
+            android:background="@color/colorBackground"
+            android:layout_alignParentStart="true"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_login"
+            android:textSize="@dimen/text_heading_2x"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark1"
+            app:fontFamily="sans-serif-medium"
+            android:padding="@dimen/margin_medium"
+            android:layout_below="@id/btnBack"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_xxlarge"
+            android:layout_below="@id/lblLogin"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:background="@drawable/rounded_corner_white"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="@dimen/margin_medium_2"
+            android:paddingEnd="@dimen/margin_medium_2"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_xxlarge"
+            android:layout_below="@id/etEmail"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:background="@drawable/rounded_corner_white"
+            app:endIconContentDescription="Forgot?"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingStart="@dimen/margin_medium_2"
+            android:paddingEnd="@dimen/margin_medium_2"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_xxlarge"
+            android:text="Log in"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"
+            android:background="@drawable/rounded_corner_pink"
+            android:layout_below="@id/etPassword"
+            android:layout_marginTop="@dimen/margin_medium_3"/>
+
+        <TextView
+            android:id="@+id/tvDontHaveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have an accoount? "
+            android:textColor="@android:color/black"
+            android:padding="@dimen/margin_small"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/margin_xxlarge"/>
+
+        <TextView
+            android:id="@+id/btnSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign up"
+            android:textColor="@color/colorPrimary1"
+            android:padding="@dimen/margin_small"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@id/tvDontHaveAccount"/>
+
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

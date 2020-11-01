@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.CheckoutActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorWhite">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_back_black_24"
+                android:padding="@dimen/margin_medium"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvToolbarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Check out"
+                android:textSize="@dimen/margin_medium_2"
+                android:textColor="@color/textcolorSecondary"
+                android:gravity="center_horizontal"
+                android:layout_marginEnd="@dimen/margin_large"/>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblDeliveryAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_delivery_address"
+            android:textSize="@dimen/text_regular"
+            android:textColor="@color/textcolorTertary"
+            android:layout_marginTop="@dimen/margin_medium_3"
+            android:layout_marginStart="@dimen/margin_medium_3"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDeliveryAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="123 York StBooklyn, NY 11201 USA"
+            android:textSize="@dimen/text_regular_2x"
+            android:textColor="@color/textcolorPrimary"
+            android:layout_below="@id/lblDeliveryAddress"
+            android:layout_toStartOf="@id/btnChangeAddress"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginEnd="@dimen/margin_xlarge"
+            android:layout_alignStart="@id/lblDeliveryAddress" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnChangeAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change"
+            android:textSize="@dimen/text_regular_2x"
+            android:textColor="@color/colorPrimaryDark1"
+            android:layout_alignTop="@id/tvDeliveryAddress"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/margin_medium_3"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnComfirm"
+            android:layout_width="@dimen/width_profile_image"
+            android:layout_height="@dimen/margin_xxlarge"
+            android:text="Confirm"
+            android:textColor="@color/colorCardView"
+            android:textAllCaps="false"
+            android:background="@drawable/rounded_corner_pink"
+            android:layout_below="@id/tvDeliveryAddress"
+            android:layout_marginTop="@dimen/margin_xxlarge"
+            android:layout_marginStart="@dimen/margin_xlarge"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCancel"
+            android:layout_width="@dimen/width_profile_image"
+            android:layout_height="@dimen/margin_xxlarge"
+            android:text="Cancel"
+            android:textColor="@color/textcolorSecondary"
+            android:textAllCaps="false"
+            android:background="@drawable/rounded_corner_gray"
+            android:layout_alignTop="@id/btnComfirm"
+            android:layout_marginEnd="@dimen/margin_xlarge"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+    <include layout="@layout/bottomsheet_checkout"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

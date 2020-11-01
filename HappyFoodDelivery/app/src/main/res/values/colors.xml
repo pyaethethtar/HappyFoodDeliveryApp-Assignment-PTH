@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F15A5A</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="colorPrimary1">#FFAAAA</color>
+    <color name="colorPrimaryDark1">#F15A5A</color>
+    <color name="colorAccent1">#FCDC2B</color>
+    <color name="colorTransparentPink">#88FFAAAA</color>
+    <color name="colorCardView">#FDF0E4</color>
+    <color name="colorBackground">#F0F0F0</color>
+
+
+    <color name="textcolorPrimary">#0a0a0a</color>
+    <color name="textcolorSecondary">#252525</color>
+    <color name="textcolorTertary">#979797</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorTransparent">#33FFFFFF</color>
+    <color name="colorGrayTransparent">#11000000</color>
+    <color name="grayLight">#B3B3B3</color>
+
+</resources>

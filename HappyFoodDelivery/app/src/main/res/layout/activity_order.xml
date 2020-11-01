@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.OrderActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorWhite">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_back_black_24"
+                android:padding="@dimen/margin_medium"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvToolbarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="My Order"
+                android:textSize="@dimen/margin_medium_2"
+                android:textColor="@color/textcolorSecondary"
+                android:gravity="center_horizontal"
+                android:layout_marginEnd="@dimen/margin_large"/>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvOrder"
+                android:layout_width="@dimen/width_cardview_small"
+                android:layout_height="@dimen/width_cardview_small"
+                app:cardCornerRadius="@dimen/margin_medium_2"
+                android:layout_marginStart="@dimen/margin_medium_3"
+                android:layout_marginTop="@dimen/margin_medium_3">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivRestaurant"
+                    android:layout_width="@dimen/width_cardview_small"
+                    android:layout_height="@dimen/width_cardview_small"
+                    android:src="@drawable/restaurant"
+                    android:scaleType="centerCrop"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRestaurantName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Really Cool Burgers"
+                android:textSize="@dimen/text_regular_3x"
+                android:textColor="@color/textcolorPrimary"
+                android:textStyle="bold"
+                android:layout_toEndOf="@id/cvOrder"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginEnd="@dimen/margin_medium_3"
+                android:layout_alignTop="@id/cvOrder"/>
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Burger * Western Food * $$"
+                android:textSize="@dimen/text_regular"
+                android:textColor="@color/textcolorTertary"
+                android:layout_below="@id/tvRestaurantName"
+                android:layout_alignStart="@id/tvRestaurantName"
+                android:layout_alignEnd="@id/tvRestaurantName"/>
+
+            <TextView
+                android:id="@+id/tvRating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" 4.9 (124 Ratings) "
+                android:textSize="@dimen/text_regular"
+                android:textColor="@color/colorPrimaryDark1"
+                android:layout_below="@id/tvDescription"
+                android:drawableLeft="@drawable/ic_star_pink_24"
+                android:layout_alignStart="@id/tvRestaurantName"
+                android:layout_alignEnd="@id/tvRestaurantName"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="123 Rock Street, NewYork City"
+                android:textSize="@dimen/text_regular"
+                android:textColor="@color/textcolorTertary"
+                android:paddingTop="@dimen/margin_small"
+                android:layout_below="@id/tvRating"
+                android:drawableLeft="@drawable/ic_baseline_location_on_24"
+                android:layout_alignStart="@id/tvRestaurantName"
+                android:layout_alignEnd="@id/tvRestaurantName"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvOrders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cvOrder"
+                android:layout_marginTop="@dimen/margin_medium_3"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnAddMoreFoods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add more foods"
+                android:textColor="@color/colorPrimaryDark1"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_regular_2x"
+                android:padding="@dimen/margin_medium_3"
+                android:layout_below="@id/rvOrders"
+                android:background="@color/colorBackground"/>
+
+            <TableLayout
+                android:id="@+id/tableDelivery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnAddMoreFoods"
+                android:stretchColumns="1">
+                <TableRow>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/lblDeliveryInstructions"
+                        android:text="Delivery Instructions"
+                        android:textColor="@color/textcolorPrimary"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_regular_2x"
+                        android:padding="@dimen/margin_medium_3"
+                        android:layout_column="1"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/btnAddNotes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Notes "
+                        android:textColor="@color/colorPrimaryDark1"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_regular_2x"
+                        android:padding="@dimen/margin_medium_3"
+                        android:drawableEnd="@drawable/ic_baseline_add_24"
+                        android:layout_column="2"/>
+                </TableRow>
+
+                <TableRow>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/margin_medium_3"
+                        android:background="@color/textcolorTertary"
+                        android:layout_column="1"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginEnd="@dimen/margin_medium_3"
+                        android:background="@color/textcolorTertary"
+                        android:layout_column="2"/>
+                </TableRow>
+
+                <TableRow>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/lblSubtotal"
+                        android:text="Subtotal"
+                        android:textColor="@color/textcolorPrimary"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_regular_2x"
+                        android:paddingStart="@dimen/margin_medium_3"
+                        android:paddingEnd="@dimen/margin_medium_3"
+                        android:paddingTop="@dimen/margin_medium_3"
+                        android:paddingBottom="@dimen/margin_medium"
+                        android:layout_column="1"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSubtotal"
+                        android:text="$64.00"
+                        android:textColor="@color/textcolorPrimary"
+                        android:textStyle="bold"
+                        android:textAlignment="textEnd"
+                        android:textSize="@dimen/text_regular_2x"
+                        android:paddingStart="@dimen/margin_medium_3"
+                        android:paddingEnd="@dimen/margin_medium_3"
+                        android:paddingTop="@dimen/margin_medium_3"
+                        android:paddingBottom="@dimen/margin_medium"
+                        android:layout_column="2"/>
+                </TableRow>
+
+                <TableRow>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/lblDeliveryCost"
+                        android:text="Delivery Cost"
+                        android:textColor="@color/textcolorPrimary"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_regular_2x"
+                        android:paddingStart="@dimen/margin_medium_3"
+                        android:paddingEnd="@dimen/margin_medium_3"
+                        android:paddingBottom="@dimen/margin_medium_3"
+                        android:layout_column="1"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDeliveryCost"
+                        android:text="Free"
+                        android:textColor="@color/textcolorPrimary"
+                        android:textStyle="bold"
+                        android:textAlignment="textEnd"
+                        android:textSize="@dimen/text_regular_2x"
+                        android:paddingStart="@dimen/margin_medium_3"
+                        android:paddingEnd="@dimen/margin_medium_3"
+                        android:paddingBottom="@dimen/margin_medium_3"
+                        android:layout_column="2"/>
+                </TableRow>
+
+                <TableRow>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/margin_medium_3"
+                        android:background="@color/textcolorTertary"
+                        android:layout_column="1"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginEnd="@dimen/margin_medium_3"
+                        android:background="@color/textcolorTertary"
+                        android:layout_column="2"/>
+                </TableRow>
+            </TableLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCheckout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_xxlarge"
+                android:text="Check out"
+                android:textColor="@color/colorCardView"
+                android:textAllCaps="false"
+                android:background="@drawable/rounded_corner_pink"
+                android:layout_below="@id/tableDelivery"
+                android:layout_margin="@dimen/margin_xlarge"/>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

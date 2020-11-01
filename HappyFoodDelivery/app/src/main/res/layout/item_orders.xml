@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:stretchColumns="1"
+    android:background="@color/colorBackground">
+
+    <TableRow>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemName"
+            android:text="Chicken Wings Basket x1"
+            android:textColor="@color/textcolorPrimary"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_regular_2x"
+            android:padding="@dimen/margin_medium_3"
+            android:layout_column="1"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemPrice"
+            android:text="$16"
+            android:textColor="@color/textcolorPrimary"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_regular_2x"
+            android:padding="@dimen/margin_medium_3"
+            android:layout_column="2"/>
+    </TableRow>
+
+    <TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/margin_medium_3"
+            android:background="@color/textcolorTertary"
+            android:layout_column="1"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="@dimen/margin_medium_3"
+            android:background="@color/textcolorTertary"
+            android:layout_column="2"/>
+    </TableRow>
+
+</TableLayout>

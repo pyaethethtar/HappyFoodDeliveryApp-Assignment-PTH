@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingEnd="@dimen/margin_medium_2"
+    android:paddingBottom="@dimen/margin_medium">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivFood"
+        android:layout_width="@dimen/width_profile_image"
+        android:layout_height="@dimen/width_profile_image"
+        android:src="@drawable/burger"
+        android:scaleType="centerCrop"
+        android:padding="@dimen/margin_medium"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFoodName"
+        android:layout_width="@dimen/width_profile_image"
+        android:layout_height="wrap_content"
+        android:text="American Beef Burgers"
+        android:textColor="@color/textcolorSecondary"
+        android:textSize="@dimen/text_regular_2x"
+        android:layout_below="@id/ivFood"
+        android:layout_marginTop="@dimen/margin_small"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPrice"
+        android:layout_width="@dimen/width_profile_image"
+        android:layout_height="wrap_content"
+        android:text="$16"
+        android:textColor="@color/textcolorPrimary"
+        android:textSize="@dimen/text_regular_2x"
+        android:textStyle="bold"
+        android:layout_below="@id/tvFoodName"
+        android:layout_marginTop="@dimen/margin_small"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btnAddToCart"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:src="@drawable/ic_outline_shopping_cart_24"
+        android:background="@color/colorPrimaryDark1"
+        android:padding="@dimen/margin_card_medium"
+        android:layout_alignEnd="@id/ivFood"
+        android:layout_alignBottom="@id/tvPrice"
+        android:layout_marginEnd="@dimen/margin_medium"/>
+
+</RelativeLayout>

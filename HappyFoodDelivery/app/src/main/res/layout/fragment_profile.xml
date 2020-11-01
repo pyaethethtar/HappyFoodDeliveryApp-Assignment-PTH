@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:backgroundTint="@color/colorWhite">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:textColor="@color/textcolorSecondary"
+                android:textSize="@dimen/text_regular_2x"
+                android:layout_gravity="end"
+                android:padding="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_medium_2"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textColor="@color/textcolorSecondary"
+                android:textSize="@dimen/text_regular_2x"
+                android:layout_gravity="start"
+                android:padding="@dimen/margin_small"
+                android:layout_marginStart="@dimen/margin_medium_2"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lblEditProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Profile"
+                android:textColor="@color/textcolorSecondary"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:padding="@dimen/margin_small"/>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="@dimen/margin_xxlarge"
+        android:paddingEnd="@dimen/margin_xxlarge"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <FrameLayout
+            android:id="@+id/flProfileImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_xxlarge"
+            android:layout_centerHorizontal="true">
+
+            <com.example.happyfooddelivery.view.components.CircleImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="@dimen/width_profile_image"
+                android:layout_height="@dimen/width_profile_image"
+                android:src="@drawable/emptyphoto"
+                android:scaleType="centerCrop"
+                app:cornerRadius="75dp"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnInsertPhoto"
+                android:layout_width="@dimen/margin_xxlarge"
+                android:layout_height="@dimen/margin_xxlarge"
+                android:src="@drawable/ic_outline_insert_photo_24"
+                android:background="@drawable/circle_gray"
+                android:padding="@dimen/margin_card_medium_2"
+                android:layout_gravity="top|end"/>
+        </FrameLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlEmail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/width_textinput_layout"
+            android:layout_below="@id/flProfileImage">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="YOUR EMAIL"
+                android:inputType="textEmailAddress"
+                android:paddingStart="@dimen/margin_medium_2"
+                android:paddingEnd="@dimen/margin_medium_2"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlPassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/width_textinput_layout"
+            android:layout_below="@id/tlEmail"
+            android:layout_marginTop="@dimen/margin_medium">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="YOUR PASSWORD"
+                android:inputType="textPassword"
+                android:paddingStart="@dimen/margin_medium_2"
+                android:paddingEnd="@dimen/margin_medium_2"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlPhone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/width_textinput_layout"
+            android:layout_below="@id/tlPassword"
+            android:layout_marginTop="@dimen/margin_medium">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="YOUR PHONE"
+                android:inputType="phone"
+                android:paddingStart="@dimen/margin_medium_2"
+                android:paddingEnd="@dimen/margin_medium_2"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlCity"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/width_textinput_layout"
+            android:layout_below="@id/tlPhone"
+            android:layout_marginTop="@dimen/margin_medium">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="CITY, STATE"
+                android:paddingStart="@dimen/margin_medium_2"
+                android:paddingEnd="@dimen/margin_medium_2"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlCountry"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/width_textinput_layout"
+            android:layout_below="@id/tlCity"
+            android:layout_marginTop="@dimen/margin_medium">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCountry"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="COUNTRY"
+                android:paddingStart="@dimen/margin_medium_2"
+                android:paddingEnd="@dimen/margin_medium_2"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

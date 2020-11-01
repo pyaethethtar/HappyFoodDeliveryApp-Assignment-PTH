@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/colorWhite"
+    app:cardCornerRadius="@dimen/margin_medium_2"
+    android:layout_marginBottom="@dimen/margin_medium_3">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_medium_3">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBurgerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Classic Cheese Burger"
+            android:textColor="@color/textcolorPrimary"
+            android:textSize="@dimen/text_regular_3x"
+            android:layout_marginEnd="@dimen/margin_medium_3"
+            android:layout_toStartOf="@id/tvBurgerPrice"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBurgerPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$16"
+            android:textColor="@color/textcolorPrimary"
+            android:textSize="@dimen/text_regular_2x"
+            android:textStyle="bold"
+            android:layout_alignBottom="@id/tvBurgerName"
+            android:layout_alignParentEnd="true"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvIngredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Angus, Beef, Cheese, Onion, Tomato, Jam, Pickles"
+            android:textSize="@dimen/text_regular"
+            android:textColor="@color/textcolorTertary"
+            android:layout_below="@id/tvBurgerName"
+            android:layout_marginTop="@dimen/margin_medium_1"
+            android:layout_marginEnd="@dimen/margin_medium_3"
+            android:layout_toStartOf="@id/tvPopular"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPopular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Popular"
+            android:textSize="@dimen/text_regular"
+            android:textColor="@color/colorPrimaryDark1"
+            android:paddingTop="@dimen/margin_small"
+            android:drawableLeft="@drawable/ic_star_pink_24"
+            android:drawablePadding="@dimen/margin_small"
+            android:layout_toStartOf="@id/btnAddToCart"
+            android:layout_alignBottom="@id/tvIngredients"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:visibility="visible"/>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnAddToCart"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_outline_shopping_cart_24"
+            android:background="@color/colorPrimaryDark1"
+            android:padding="@dimen/margin_card_medium"
+            android:layout_alignParentEnd="true"
+            android:layout_alignEnd="@id/tvBurgerPrice"
+            android:layout_alignBottom="@id/tvIngredients"/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
