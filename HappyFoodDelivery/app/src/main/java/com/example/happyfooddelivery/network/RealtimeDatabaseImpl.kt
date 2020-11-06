@@ -3,10 +3,7 @@ package com.example.happyfooddelivery.network
 import android.graphics.Bitmap
 import android.provider.ContactsContract
 import android.util.Log
-import com.example.happyfooddelivery.data.vos.CartVO
-import com.example.happyfooddelivery.data.vos.FoodVO
-import com.example.happyfooddelivery.data.vos.RestaurantVO
-import com.example.happyfooddelivery.data.vos.UserVO
+import com.example.happyfooddelivery.data.vos.*
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -23,6 +20,25 @@ object RealtimeDatabaseImpl : FirebaseApi {
     private val database : DatabaseReference = Firebase.database.reference
     private val storage = FirebaseStorage.getInstance()
     private val storageReference = storage.reference
+
+    override fun getCategories(onSuccess: (List<CategoryVO>) -> Unit, onFailure: (String) -> Unit) {
+        database.child("categories").addValueEventListener(object : ValueEventListener{
+            override fun onCancelled(error: DatabaseError) {
+                onFailure(error.message)
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                var categories : ArrayList<CategoryVO> = arrayListOf()
+                snapshot.children.forEach {datasnapshot->
+                    datasnapshot.getValue(CategoryVO::class.java)?.let {
+                        categories.add(it)
+                    }
+                }
+                onSuccess(categories)
+            }
+
+        })
+    }
 
     override fun getRestaurants(
         onSuccess: (List<RestaurantVO>) -> Unit,

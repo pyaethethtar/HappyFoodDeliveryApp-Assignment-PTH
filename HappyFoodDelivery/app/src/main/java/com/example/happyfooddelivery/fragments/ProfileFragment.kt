@@ -23,6 +23,7 @@ import com.example.happyfooddelivery.mvp.presenters.ProfilePresenter
 import com.example.happyfooddelivery.mvp.presenters.impls.ProfilePresenterImpl
 import com.example.happyfooddelivery.mvp.views.ProfileView
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 import java.io.IOException
 
@@ -103,9 +104,9 @@ class ProfileFragment : Fragment(), ProfileView {
         etCity.setText(user.city)
         etCountry.setText(user.country)
         user.image?.let {
-            Glide.with(mContext).load(user.image).into(ivProfile)
+            Glide.with(mContext).load(user.image).circleCrop().into(ivProfile)
         } ?: kotlin.run {
-            Glide.with(mContext).load(getString(R.string.empty_photo)).into(ivProfile)
+            Glide.with(mContext).load(getString(R.string.empty_photo)).circleCrop().into(ivProfile)
         }
 
 
@@ -114,7 +115,7 @@ class ProfileFragment : Fragment(), ProfileView {
     }
 
     override fun navigateToHomeScreen() {
-
+        
     }
 
 
@@ -157,8 +158,9 @@ class ProfileFragment : Fragment(), ProfileView {
             }
 
             mImage?.let {
-                ivProfile.setImageBitmap(it)
-                ivProfile.setBackgroundDrawable(BitmapDrawable(resources, it))
+                Glide.with(mContext).load(mImage).circleCrop().into(ivProfile)
+//                ivProfile.setImageBitmap(it)
+//                ivProfile.setBackgroundDrawable(BitmapDrawable(resources, it))
             }
         }
     }

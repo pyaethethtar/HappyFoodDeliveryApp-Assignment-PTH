@@ -11,8 +11,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.happyfooddelivery.R
 import com.example.happyfooddelivery.activities.DetailsActivity
+import com.example.happyfooddelivery.adapters.CategoriesAdapter
 import com.example.happyfooddelivery.adapters.PopularChoiceAdapter
 import com.example.happyfooddelivery.adapters.RestaurantAdapter
+import com.example.happyfooddelivery.data.vos.CategoryVO
 import com.example.happyfooddelivery.data.vos.RestaurantVO
 import com.example.happyfooddelivery.mvp.presenters.HomePresenter1
 import com.example.happyfooddelivery.mvp.presenters.impls.HomePresenter1Impl
@@ -27,6 +29,7 @@ class HomeFragment1 : Fragment(), HomeView1 {
 
     private lateinit var mPresenter : HomePresenter1
     private lateinit var mAdapter : RestaurantAdapter
+    private lateinit var categoryAdapter : CategoriesAdapter
     private lateinit var mPopularChoiceAdapter: PopularChoiceAdapter
     private lateinit var mContext: Context
     private lateinit var mView : View
@@ -71,8 +74,13 @@ class HomeFragment1 : Fragment(), HomeView1 {
     }
 
     private fun setUpRecyclerView() {
+        rvCategories?.layoutManager = LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false)
+        categoryAdapter = CategoriesAdapter()
+        rvCategories?.adapter = categoryAdapter
+
         rvRestaurants.layoutManager = LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false)
-        mAdapter = RestaurantAdapter(false, mPresenter)
+        if (mViewType==1)   mAdapter = RestaurantAdapter(true, mPresenter)
+        else    mAdapter = RestaurantAdapter(false, mPresenter)
         rvRestaurants.adapter = mAdapter
 
         rvPopularChoices?.layoutManager = LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false)
@@ -83,6 +91,10 @@ class HomeFragment1 : Fragment(), HomeView1 {
     private fun setUpPresenter() {
         mPresenter = ViewModelProviders.of(this).get(HomePresenter1Impl::class.java)
         mPresenter.initPresenter(this)
+    }
+
+    override fun displayCategories(categories: List<CategoryVO>) {
+        categoryAdapter.setNewData(categories)
     }
 
     override fun displayRestaurants(restaurants: List<RestaurantVO>) {

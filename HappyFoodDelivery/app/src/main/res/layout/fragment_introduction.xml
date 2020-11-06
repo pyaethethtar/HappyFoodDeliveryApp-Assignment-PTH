@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log in"
+        android:textColor="@color/colorPrimaryDark1"
+        android:textSize="@dimen/text_regular_2x"
+        android:textStyle="bold"
+        android:layout_gravity="end"
+        android:padding="@dimen/margin_medium_3"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:gravity="center_horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnCircle1"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/circle_gray"
+                android:layout_margin="@dimen/margin_medium"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnCircle2"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/circle_gray"
+                android:layout_margin="@dimen/margin_medium"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnCircle3"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/circle_gray"
+                android:layout_margin="@dimen/margin_medium"/>
+
+        </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCreateAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_create_account"
+        android:textAllCaps="false"
+        android:textColor="@color/colorCardView"
+        android:background="@drawable/rounded_corner_pink"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnContinueWithFb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_continue_facebok"
+        android:textAllCaps="false"
+        android:textColor="@color/textcolorPrimary"
+        android:textAlignment="textStart"
+        android:paddingStart="@dimen/margin_xxlarge"
+        android:drawableLeft="@drawable/facebook_icon"
+        android:drawablePadding="@dimen/margin_xlarge"
+        android:background="@drawable/rounded_corner_gray"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_medium_2"/>
+
+</LinearLayout>

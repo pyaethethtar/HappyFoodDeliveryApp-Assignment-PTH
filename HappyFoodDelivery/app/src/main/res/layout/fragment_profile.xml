@@ -60,20 +60,19 @@
             android:layout_margin="@dimen/margin_xxlarge"
             android:layout_centerHorizontal="true">
 
-            <com.example.happyfooddelivery.view.components.CircleImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivProfile"
                 android:layout_width="@dimen/width_profile_image"
                 android:layout_height="@dimen/width_profile_image"
                 android:src="@drawable/emptyphoto"
-                android:scaleType="centerCrop"
-                app:cornerRadius="75dp"/>
+                android:scaleType="centerCrop"/>
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/btnInsertPhoto"
                 android:layout_width="@dimen/margin_xxlarge"
                 android:layout_height="@dimen/margin_xxlarge"
                 android:src="@drawable/ic_outline_insert_photo_24"
-                android:background="@drawable/circle_gray"
+                android:background="@drawable/circle_gray_with_border"
                 android:padding="@dimen/margin_card_medium_2"
                 android:layout_gravity="top|end"/>
         </FrameLayout>

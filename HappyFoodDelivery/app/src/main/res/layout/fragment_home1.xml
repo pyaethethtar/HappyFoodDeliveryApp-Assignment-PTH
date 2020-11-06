@@ -55,7 +55,7 @@
             android:layout_alignTop="@id/actSearchFoods"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvTypes"
+            android:id="@+id/rvCategories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignStart="@id/lblDeliveringTo"
@@ -69,7 +69,7 @@
             android:layout_alignStart="@id/lblDeliveringTo"
             android:layout_alignEnd="@id/ivSearch"
             android:layout_marginTop="@dimen/margin_medium_3"
-            android:layout_below="@id/rvTypes"/>
+            android:layout_below="@id/rvCategories"/>
     </RelativeLayout>
 
 </androidx.core.widget.NestedScrollView>

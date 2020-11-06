@@ -23,8 +23,8 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivDetails"
-                android:layout_width="@dimen/width_profile_image"
-                android:layout_height="@dimen/width_profile_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:src="@drawable/burger"
                 android:scaleType="centerCrop"
                 android:layout_gravity="center"/>

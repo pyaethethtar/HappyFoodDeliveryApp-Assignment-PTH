@@ -3,6 +3,7 @@ package com.example.happyfooddelivery.data.model
 import android.graphics.Bitmap
 import com.example.groceryapppth.network.remoteconfig.FirebaseRemoteConfigManager
 import com.example.happyfooddelivery.data.vos.CartVO
+import com.example.happyfooddelivery.data.vos.CategoryVO
 import com.example.happyfooddelivery.data.vos.RestaurantVO
 import com.example.happyfooddelivery.data.vos.UserVO
 import com.example.happyfooddelivery.network.FirebaseApi
@@ -12,6 +13,10 @@ object FoodDeliveryModelImpl : FoodDeliveryModel {
 
     override var mFirebaseApi: FirebaseApi = RealtimeDatabaseImpl
     override var mFirebaseRemoteConfigManager: FirebaseRemoteConfigManager = FirebaseRemoteConfigManager
+
+    override fun getCategories(onSuccess: (List<CategoryVO>) -> Unit, onFailure: (String) -> Unit) {
+        mFirebaseApi.getCategories(onSuccess, onFailure)
+    }
 
     override fun getRestaurants(
         onSuccess: (List<RestaurantVO>) -> Unit,

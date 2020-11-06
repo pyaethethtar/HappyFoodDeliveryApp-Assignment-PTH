@@ -12,6 +12,11 @@
     <string name="lbl_thank_you">Thank you for your order</string>
     <string name="btn_order_something_else">Order something else</string>
     <string name="empty_photo">https://cityofvinton.org/wp-content/uploads/2020/08/emptyphoto.jpg</string>
+    <string name="lbl_happy_meals">Happy Meals</string>
+    <string name="lbl_discover_foods">Discover the best foods from over 1,000 restaurants</string>
+    <string name="btn_get_started">Get Started</string>
+    <string name="btn_create_account">Create Account</string>
+    <string name="btn_continue_facebok">Continue with Facebook</string>
 
     <string-array name="current_location">
         <item>Current Location</item>

@@ -3,6 +3,7 @@ package com.example.happyfooddelivery.data.model
 import android.graphics.Bitmap
 import com.example.groceryapppth.network.remoteconfig.FirebaseRemoteConfigManager
 import com.example.happyfooddelivery.data.vos.CartVO
+import com.example.happyfooddelivery.data.vos.CategoryVO
 import com.example.happyfooddelivery.data.vos.RestaurantVO
 import com.example.happyfooddelivery.data.vos.UserVO
 import com.example.happyfooddelivery.network.FirebaseApi
@@ -11,6 +12,7 @@ interface FoodDeliveryModel {
 
     var mFirebaseApi : FirebaseApi
     var mFirebaseRemoteConfigManager : FirebaseRemoteConfigManager
+    fun getCategories(onSuccess: (List<CategoryVO>) -> Unit, onFailure: (String) -> Unit)
     fun getRestaurants(onSuccess:(List<RestaurantVO>)->Unit, onFailure:(String)->Unit)
     fun getRestaurantById(id : Int, onSuccess: (RestaurantVO) -> Unit)
     fun getCartItems(onSuccess: (List<CartVO>)-> Unit, onFailure: (String) -> Unit)

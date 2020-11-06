@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingEnd="@dimen/margin_medium_3"
+    android:paddingBottom="@dimen/margin_medium_3"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
@@ -12,7 +13,7 @@
     app:cardCornerRadius="@dimen/margin_medium_2">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivRestaurant"
+        android:id="@+id/ivNewRestaurant"
         android:layout_width="@dimen/width_cardview_small"
         android:layout_height="@dimen/width_cardview_small"
         android:src="@drawable/restaurant"
@@ -20,7 +21,7 @@
 </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvRestaurantName"
+        android:id="@+id/tvNewRestaurantName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Super Good Cafe"
@@ -31,27 +32,27 @@
         android:layout_marginStart="@dimen/margin_medium_2"/>
 
     <TextView
-        android:id="@+id/tvDescription"
+        android:id="@+id/tvNewDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cafe * Western Food * $$"
         android:textSize="@dimen/text_regular"
         android:textColor="@color/textcolorTertary"
-        android:layout_below="@id/tvRestaurantName"
-        android:layout_alignStart="@id/tvRestaurantName"
+        android:layout_below="@id/tvNewRestaurantName"
+        android:layout_alignStart="@id/tvNewRestaurantName"
         android:layout_marginTop="@dimen/margin_small"/>
 
     <TextView
-        android:id="@+id/tvRating"
+        android:id="@+id/tvNewRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="4.9 (124 Ratings) "
         android:textSize="@dimen/text_regular"
         android:textColor="@color/colorPrimaryDark1"
-        android:layout_below="@id/tvDescription"
+        android:layout_below="@id/tvNewDescription"
         android:drawableLeft="@drawable/ic_star_pink_24"
         android:drawablePadding="@dimen/margin_small"
-        android:layout_alignStart="@id/tvRestaurantName"
+        android:layout_alignStart="@id/tvNewRestaurantName"
         android:layout_marginTop="@dimen/margin_small"/>
 
 

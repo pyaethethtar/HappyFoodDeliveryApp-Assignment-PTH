@@ -11,6 +11,12 @@ class HomePresenter1Impl : AbstractBasePresenter<HomeView1>(), HomePresenter1 {
     private val mFoodDeliveryModel : FoodDeliveryModel = FoodDeliveryModelImpl
 
     override fun onUiReady() {
+        mFoodDeliveryModel.getCategories({
+            mView?.displayCategories(it)
+        },{
+            mView?.showError(it)
+        })
+
         mFoodDeliveryModel.getRestaurants({
             mView?.displayRestaurants(it)
         },{
